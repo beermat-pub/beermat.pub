@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beermat</title>
+<meta name="description" content="Back-of-a-beer-mat calculations, done properly. An open-source engineering worksheet: math that looks like math, with real units.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23b4532a'/><circle cx='50' cy='50' r='36' fill='none' stroke='%23f6efe3' stroke-width='4' stroke-dasharray='6 6'/></svg>">
+<style>
+  :root {
+    --bg: #f6efe3;
+    --fg: #2b2118;
+    --muted: #6b5a4a;
+    --accent: #b4532a;
+    --mat: #fffaf1;
+    --rule: #e2d5c0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1612;
+      --fg: #f1e7d8;
+      --muted: #b3a28c;
+      --accent: #e08a5b;
+      --mat: #262019;
+      --rule: #3a3027;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px 16px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main {
+    width: 100%;
+    max-width: 30rem;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(28px, 8vw, 56px);
+    background: var(--mat);
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px var(--mat), 0 0 0 11px var(--rule), 0 18px 40px rgba(0,0,0,.12);
+    text-align: center;
+  }
+  h1 { margin: 0; font-size: clamp(2rem, 8vw, 2.6rem); letter-spacing: -0.02em; color: var(--accent); }
+  .tag { margin: .25em 0 1.2em; font-weight: 600; }
+  .calc {
+    margin: 0 auto 1.2em;
+    font: 0.95rem/1.6 ui-monospace, "Cascadia Mono", Consolas, monospace;
+    color: var(--muted);
+    text-align: left;
+  }
+  .calc b { color: var(--fg); font-weight: 600; }
+  p { margin: 0 0 .6em; }
+  .small { font-size: .9rem; color: var(--muted); }
+  a { color: var(--accent); }
+  @media (max-width: 420px) {
+    main { aspect-ratio: auto; border-radius: 24px; box-shadow: 0 18px 40px rgba(0,0,0,.12); }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Beermat</h1>
+  <p class="tag">Back-of-a-beer-mat calculations, done properly.</p>
+  <pre class="calc">L := 6 m
+q := 12 kN/m
+M := q·L²/8 = <b>54 kN·m</b></pre>
+  <p>An open-source engineering worksheet: math that looks like math, with real units. Coming soon.</p>
+  <p class="small"><a href="https://github.com/beermat-pub">GitHub</a> · <a href="mailto:hello@beermat.pub">hello@beermat.pub</a></p>
+</main>
+</body>
+</html>
