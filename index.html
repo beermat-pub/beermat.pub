@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Beermat</title>
 <meta name="description" content="Back-of-a-beer-mat calculations, done properly. An open-source engineering worksheet: math that looks like math, with real units.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23b4532a'/><circle cx='50' cy='50' r='36' fill='none' stroke='%23f6efe3' stroke-width='4' stroke-dasharray='6 6'/></svg>">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="icon" href="icon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#c27d18">
 <style>
   :root {
     --bg: #f6efe3;
     --fg: #2b2118;
     --muted: #6b5a4a;
-    --accent: #b4532a;
+    --accent: #8f5810;
     --mat: #fffaf1;
     --rule: #e2d5c0;
   }
@@ -20,7 +23,7 @@
       --bg: #1c1612;
       --fg: #f1e7d8;
       --muted: #b3a28c;
-      --accent: #e08a5b;
+      --accent: #e0a040;
       --mat: #262019;
       --rule: #3a3027;
     }
@@ -50,6 +53,7 @@
     box-shadow: 0 0 0 10px var(--mat), 0 0 0 11px var(--rule), 0 18px 40px rgba(0,0,0,.12);
     text-align: center;
   }
+  .logo { display: block; margin: 0 auto 10px; }
   h1 { margin: 0; font-size: clamp(2rem, 8vw, 2.6rem); letter-spacing: -0.02em; color: var(--accent); }
   .tag { margin: .25em 0 1.2em; font-weight: 600; }
   .calc {
@@ -69,6 +73,7 @@
 </head>
 <body>
 <main>
+  <img class="logo" src="logo.svg" alt="" width="72" height="72">
   <h1>Beermat</h1>
   <p class="tag">Back-of-a-beer-mat calculations, done properly.</p>
   <pre class="calc">L := 6 m
