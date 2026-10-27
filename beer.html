@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy us a beer · Beermat</title>
+<meta name="description" content="Beermat is free and open source. If it saves you time, buy the developer a beer.">
+<link rel="icon" href="logo-small.svg" type="image/svg+xml">
+<link rel="icon" href="icon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#c27d18">
+<style>
+  :root {
+    --bg: #f6efe3;
+    --fg: #2b2118;
+    --muted: #6b5a4a;
+    --accent: #8f5810;
+    --mat: #fffaf1;
+    --rule: #e2d5c0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1612;
+      --fg: #f1e7d8;
+      --muted: #b3a28c;
+      --accent: #e0a040;
+      --mat: #262019;
+      --rule: #3a3027;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    padding: 32px 16px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main {
+    width: 34rem;
+    height: 34rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px;
+    background: var(--mat);
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px var(--mat), 0 0 0 11px var(--rule), 0 18px 40px rgba(0,0,0,.12);
+    text-align: center;
+  }
+  .logo { display: block; margin: 0 0 10px; }
+  h1 { margin: 0; font-size: 2.6rem; line-height: 1.1; letter-spacing: -0.02em; color: var(--accent); }
+  .tag { margin: .3em 0 1.1em; font-weight: 600; }
+  .calc {
+    margin: 0 0 1.1em;
+    font: 0.95rem/1.6 ui-monospace, "Cascadia Mono", Consolas, monospace;
+    color: var(--muted);
+    text-align: left;
+  }
+  .calc b { color: var(--fg); font-weight: 600; }
+  .about { margin: 0; max-width: 19rem; }
+  footer { text-align: center; font-size: .9rem; color: var(--muted); }
+  footer p { margin: 0 0 .4em; }
+  a { color: var(--accent); }
+  @media (max-width: 600px) {
+    main {
+      width: 100%;
+      max-width: 30rem;
+      height: auto;
+      padding: 40px 24px;
+      border-radius: 28px;
+      box-shadow: 0 0 0 8px var(--mat), 0 0 0 9px var(--rule), 0 18px 40px rgba(0,0,0,.12);
+    }
+    h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <a href="/"><img class="logo" src="logo.svg" alt="Beermat" width="72" height="72"></a>
+  <h1>Buy us a beer</h1>
+  <p class="tag">Beermat is free, open source, and made in spare time.</p>
+  <p class="about">If it saves you an afternoon, or just makes the sums nicer, a beer keeps it going. Thank you!</p>
+  <p class="about" style="margin-top:1.1em"><a href="https://github.com/sponsors/dlcarneiro"><b>GitHub Sponsors</b></a><br>one-off or monthly, no fees</p>
+  <p class="about" style="margin-top:.8em"><a href="https://ko-fi.com/dcarneiro"><b>Ko-fi</b></a><br>if you'd rather not use GitHub</p>
+</main>
+<footer>
+  <p><a href="/">beermat.pub</a> · <a href="https://github.com/beermat-pub">GitHub</a> · <a href="mailto:hello@beermat.pub">hello@beermat.pub</a></p>
+</footer>
+</body>
+</html>
