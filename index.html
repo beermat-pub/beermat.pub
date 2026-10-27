@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Beermat</title>
 <meta name="description" content="Back-of-a-beer-mat calculations, done properly. An open-source engineering worksheet: math that looks like math, with real units.">
-<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="icon" href="logo-small.svg" type="image/svg+xml">
 <link rel="icon" href="icon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#c27d18">
@@ -32,42 +32,55 @@
   html, body { margin: 0; }
   body {
     min-height: 100vh;
-    display: grid;
-    place-items: center;
-    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    padding: 32px 16px;
     background: var(--bg);
     color: var(--fg);
     font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   }
   main {
-    width: 100%;
-    max-width: 30rem;
-    aspect-ratio: 1;
+    width: 34rem;
+    height: 34rem;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: clamp(28px, 8vw, 56px);
+    padding: 64px;
     background: var(--mat);
     border: 1px solid var(--rule);
     border-radius: 50%;
     box-shadow: 0 0 0 10px var(--mat), 0 0 0 11px var(--rule), 0 18px 40px rgba(0,0,0,.12);
     text-align: center;
   }
-  .logo { display: block; margin: 0 auto 10px; }
-  h1 { margin: 0; font-size: clamp(2rem, 8vw, 2.6rem); letter-spacing: -0.02em; color: var(--accent); }
-  .tag { margin: .25em 0 1.2em; font-weight: 600; }
+  .logo { display: block; margin: 0 0 10px; }
+  h1 { margin: 0; font-size: 2.6rem; line-height: 1.1; letter-spacing: -0.02em; color: var(--accent); }
+  .tag { margin: .3em 0 1.1em; font-weight: 600; }
   .calc {
-    margin: 0 auto 1.2em;
+    margin: 0 0 1.1em;
     font: 0.95rem/1.6 ui-monospace, "Cascadia Mono", Consolas, monospace;
     color: var(--muted);
     text-align: left;
   }
   .calc b { color: var(--fg); font-weight: 600; }
-  p { margin: 0 0 .6em; }
-  .small { font-size: .9rem; color: var(--muted); }
+  .about { margin: 0; max-width: 19rem; }
+  footer { text-align: center; font-size: .9rem; color: var(--muted); }
+  footer p { margin: 0 0 .4em; }
   a { color: var(--accent); }
-  @media (max-width: 420px) {
-    main { aspect-ratio: auto; border-radius: 24px; box-shadow: 0 18px 40px rgba(0,0,0,.12); }
+  @media (max-width: 600px) {
+    main {
+      width: 100%;
+      max-width: 30rem;
+      height: auto;
+      padding: 40px 24px;
+      border-radius: 28px;
+      box-shadow: 0 0 0 8px var(--mat), 0 0 0 9px var(--rule), 0 18px 40px rgba(0,0,0,.12);
+    }
+    h1 { font-size: 2.2rem; }
   }
 </style>
 </head>
@@ -79,9 +92,11 @@
   <pre class="calc">L := 6 m
 q := 12 kN/m
 M := q·L²/8 = <b>54 kN·m</b></pre>
-  <p>An open-source engineering worksheet: math that looks like math, with real units. Coming soon.</p>
-  <p class="small"><a href="https://github.com/beermat-pub">GitHub</a> · <a href="mailto:hello@beermat.pub">hello@beermat.pub</a></p>
-  <p class="small">Buy the developer a beer: <a href="https://github.com/sponsors/dlcarneiro">GitHub Sponsors</a> · <a href="https://ko-fi.com/dcarneiro">Ko-fi</a></p>
+  <p class="about">An open-source engineering worksheet: math that looks like math, with real units. Coming soon.</p>
 </main>
+<footer>
+  <p><a href="https://github.com/beermat-pub">GitHub</a> · <a href="mailto:hello@beermat.pub">hello@beermat.pub</a></p>
+  <p>Buy the developer a beer: <a href="https://github.com/sponsors/dlcarneiro">GitHub Sponsors</a> · <a href="https://ko-fi.com/dcarneiro">Ko-fi</a></p>
+</footer>
 </body>
 </html>
