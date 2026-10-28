@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms and privacy · Beermat</title>
+<meta name="description" content="Beermat's terms of use and privacy: free software, no warranty, no data collected.">
+<link rel="icon" href="logo-small.svg" type="image/svg+xml">
+<link rel="icon" href="icon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#c27d18">
+<style>
+  :root {
+    --bg: #f6efe3;
+    --fg: #2b2118;
+    --muted: #6b5a4a;
+    --accent: #8f5810;
+    --mat: #fffaf1;
+    --rule: #e2d5c0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1612;
+      --fg: #f1e7d8;
+      --muted: #b3a28c;
+      --accent: #e0a040;
+      --mat: #262019;
+      --rule: #3a3027;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    padding: 32px 16px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main {
+    width: 100%;
+    max-width: 40rem;
+    padding: 40px 44px;
+    background: var(--mat);
+    border: 1px solid var(--rule);
+    border-radius: 28px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.12);
+  }
+  .logo { display: block; margin: 0 auto 10px; }
+  h1 { margin: 0 0 .6em; font-size: 2.2rem; line-height: 1.1; letter-spacing: -0.02em; color: var(--accent); text-align: center; }
+  h2 { margin: 1.4em 0 .4em; font-size: 1.15rem; color: var(--accent); }
+  p, li { margin: 0 0 .7em; }
+  ul { padding-left: 1.2em; margin: 0; }
+  .notice { padding: 14px 18px; border-left: 4px solid var(--accent); background: var(--bg); border-radius: 6px; }
+  footer { text-align: center; font-size: .9rem; color: var(--muted); }
+  footer p { margin: 0 0 .4em; }
+  a { color: var(--accent); }
+  @media (max-width: 600px) {
+    main { padding: 28px 20px; }
+    h1 { font-size: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <a href="/"><img class="logo" src="logo.svg" alt="Beermat" width="56" height="56"></a>
+  <h1>Terms and privacy</h1>
+
+  <h2>Terms of use</h2>
+  <p class="notice">Beermat is free software under the MIT licence, provided as is, without warranty of any kind. It is a calculation aid: you are responsible for checking its results and for any decisions or designs based on them. The authors accept no liability for any loss or damage arising from its use.</p>
+  <p>The full terms are the <a href="https://github.com/beermat-pub/beermat/blob/main/LICENSE">MIT licence</a>: you may use, copy, change and share Beermat freely, for any purpose, including commercial work. Your worksheets are yours.</p>
+
+  <h2>Privacy</h2>
+  <ul>
+    <li><b>The app collects nothing.</b> No account, no analytics, no telemetry. Worksheets stay on your computer.</li>
+    <li><b>Update check.</b> When it starts, the app asks GitHub whether a newer version is out. That is an ordinary web request (GitHub sees your IP address, as for any web page); nothing about you or your worksheets is sent. Turn it off in Help → Check for updates at startup.</li>
+    <li><b>AI assistants.</b> The app's MCP server listens only on your own computer. An AI assistant you connect to it can read and change the open worksheet; what that assistant does with it is governed by its own terms.</li>
+    <li><b>This website</b> uses no cookies and no analytics. It is hosted on GitHub Pages, which keeps the usual server logs.</li>
+    <li><b>Donations</b> go through GitHub Sponsors or Ko-fi, under their own terms and privacy policies.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:hello@beermat.pub">hello@beermat.pub</a></p>
+</main>
+<footer>
+  <p><a href="/">beermat.pub</a> · <a href="https://github.com/beermat-pub">GitHub</a> · <a href="mailto:hello@beermat.pub">hello@beermat.pub</a></p>
+</footer>
+</body>
+</html>
