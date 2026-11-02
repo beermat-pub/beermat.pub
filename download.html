@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download · Beermat</title>
+<meta name="description" content="Download Beermat for Windows, macOS and Linux, or try it in your browser.">
+<link rel="icon" href="/logo-small.svg" type="image/svg+xml">
+<link rel="icon" href="/icon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#c27d18">
+<style>
+  :root {
+    --bg: #f6efe3;
+    --fg: #2b2118;
+    --muted: #6b5a4a;
+    --accent: #8f5810;
+    --mat: #fffaf1;
+    --rule: #e2d5c0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1612;
+      --fg: #f1e7d8;
+      --muted: #b3a28c;
+      --accent: #e0a040;
+      --mat: #262019;
+      --rule: #3a3027;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    padding: 32px 16px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main {
+    width: 100%;
+    max-width: 40rem;
+    padding: 40px 44px;
+    background: var(--mat);
+    border: 1px solid var(--rule);
+    border-radius: 28px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.12);
+  }
+  .logo { display: block; margin: 0 auto 10px; }
+  h1 { margin: 0 0 .6em; font-size: 2.2rem; line-height: 1.1; letter-spacing: -0.02em; color: var(--accent); text-align: center; }
+  h2 { margin: 1.4em 0 .4em; font-size: 1.15rem; color: var(--accent); }
+  p, li { margin: 0 0 .7em; }
+  ul { padding-left: 1.2em; margin: 0; }
+  .files { list-style: none; padding: 0; }
+  .files li { margin: 0 0 .5em; }
+  .files small { color: var(--muted); }
+  .version { text-align: center; color: var(--muted); margin-top: -.6em; }
+  footer { text-align: center; font-size: .9rem; color: var(--muted); }
+  footer p { margin: 0 0 .4em; }
+  a { color: var(--accent); }
+  @media (max-width: 600px) {
+    main { padding: 28px 20px; }
+    h1 { font-size: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <a href="/"><img class="logo" src="/logo.svg" alt="Beermat" width="56" height="56"></a>
+  <h1>Download Beermat</h1>
+  <p class="version" id="version">The latest version</p>
+  <p>Free and open source. Or <a href="/try">try it in your browser</a> first, with nothing to install.</p>
+
+  <h2>Windows</h2>
+  <ul class="files">
+    <li><a data-file="Beermat-windows-setup.exe">Installer</a> <small>for Windows 10 and 11, with the <code>beermat</code> command</small></li>
+    <li><a data-file="Beermat-windows-portable.zip">Portable</a> <small>unzip anywhere and run Beermat.exe</small></li>
+  </ul>
+
+  <h2>macOS</h2>
+  <ul class="files">
+    <li><a data-file="Beermat-macos.dmg">Disk image</a> <small>for Apple silicon</small></li>
+  </ul>
+
+  <h2>Linux</h2>
+  <ul class="files">
+    <li><a data-file="beermat-linux.deb">.deb</a> <small>Debian, Ubuntu</small></li>
+    <li><a data-file="beermat-linux.rpm">.rpm</a> <small>Fedora, openSUSE</small></li>
+  </ul>
+
+  <h2>Before you install</h2>
+  <p>The installers aren't signed yet, so your system may warn about them: on Windows choose <b>More info</b>, then <b>Run anyway</b>; on macOS, right-click Beermat in Applications and choose <b>Open</b>. The <a href="/docs/start/install/">manual</a> has the details.</p>
+  <p>Every version, with its notes and the command line on its own, is on the <a href="https://github.com/beermat-pub/beermat/releases">releases page</a>.</p>
+</main>
+<footer>
+  <p><a href="/">beermat.pub</a> · <a href="/docs/">Manual</a> · <a href="https://github.com/beermat-pub">GitHub</a></p>
+  <p>Free and open source (MIT licence), provided as is, without warranty · <a href="/terms">Terms and privacy</a></p>
+</footer>
+<script>
+  // The newest release, previews included (GitHub's "latest" leaves previews out). Without it, each link
+  // goes to the releases page.
+  const releases = 'https://github.com/beermat-pub/beermat/releases';
+  const links = document.querySelectorAll('a[data-file]');
+  links.forEach(a => a.href = releases);
+  fetch('https://api.github.com/repos/beermat-pub/beermat/releases?per_page=1')
+    .then(r => r.json())
+    .then(([release]) => {
+      const version = release.tag_name.replace(/^v/, '');
+      document.getElementById('version').textContent =
+        'Version ' + version + (release.prerelease ? ' (preview)' : '');
+      const assets = Object.fromEntries(release.assets.map(a => [a.name, a.browser_download_url]));
+      links.forEach(a => { if (assets[a.dataset.file]) a.href = assets[a.dataset.file]; });
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>

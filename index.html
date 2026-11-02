@@ -68,6 +68,10 @@
   }
   .calc b { color: var(--fg); font-weight: 600; }
   .about { margin: 0; max-width: 19rem; }
+  .go { margin: 1.1em 0 .6em; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .button { display: inline-block; padding: .45em 1.1em; border-radius: 999px; background: var(--accent); color: var(--mat); font-weight: 600; text-decoration: none; }
+  .button.plain { background: none; color: var(--accent); border: 1.5px solid var(--accent); }
+  .small { margin: 0; font-size: .85rem; color: var(--muted); }
   footer { text-align: center; font-size: .9rem; color: var(--muted); }
   footer p { margin: 0 0 .4em; }
   a { color: var(--accent); }
@@ -92,7 +96,9 @@
   <pre class="calc">L := 6 m
 q := 12 kN/m
 M := q·L²/8 = <b>54 kN·m</b></pre>
-  <p class="about">An open-source engineering worksheet: math that looks like math, with real units. Coming soon.</p>
+  <p class="about">An open-source engineering worksheet: math that looks like math, with real units.</p>
+  <p class="go"><a class="button" href="/try">Try it in your browser</a> <a class="button plain" href="/download">Download</a></p>
+  <p class="small"><a href="/docs/">Manual</a> · a preview: please <a href="https://github.com/beermat-pub/beermat/issues">tell us</a> what you find</p>
 </main>
 <footer>
   <p><a href="https://github.com/beermat-pub">GitHub</a> · <a href="mailto:hello@beermat.pub">hello@beermat.pub</a></p>
