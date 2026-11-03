@@ -93,6 +93,11 @@
     <li><a data-file="beermat-linux.rpm">.rpm</a> <small>Fedora, openSUSE</small></li>
   </ul>
 
+  <h2>VS Code</h2>
+  <ul class="files">
+    <li><a data-file="beermat-*.vsix">Extension</a> <small><code>.bbm</code> files open on their page in VS Code; install with <code>code --install-extension</code>, or Extensions → ⋯ → Install from VSIX</small></li>
+  </ul>
+
   <h2>Before you install</h2>
   <p>The installers aren't signed yet, so your system may warn about them: on Windows choose <b>More info</b>, then <b>Run anyway</b>; on macOS, right-click Beermat in Applications and choose <b>Open</b>. The <a href="/docs/start/install/">manual</a> has the details.</p>
   <p>Every version, with its notes and the command line on its own, is on the <a href="https://github.com/beermat-pub/beermat/releases">releases page</a>.</p>
@@ -114,7 +119,13 @@
       document.getElementById('version').textContent =
         'Version ' + version + (release.prerelease ? ' (preview)' : '');
       const assets = Object.fromEntries(release.assets.map(a => [a.name, a.browser_download_url]));
-      links.forEach(a => { if (assets[a.dataset.file]) a.href = assets[a.dataset.file]; });
+      // A name with * stands for the version, for files named with it (beermat-1.0.0.vsix).
+      links.forEach(a => {
+        const name = a.dataset.file.includes('*')
+          ? Object.keys(assets).find(n => n.startsWith(a.dataset.file.split('*')[0]) && n.endsWith(a.dataset.file.split('*')[1]))
+          : a.dataset.file;
+        if (name && assets[name]) a.href = assets[name];
+      });
     })
     .catch(() => {});
 </script>
