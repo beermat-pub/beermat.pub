@@ -1,0 +1,19 @@
+<!-- #t1 -->
+# Beam check
+
+```calc
+L := 6 m
+```
+
+```calc
+q := 12 kN/m
+E := 210 GPa
+I := 8360 cm^4
+W_el := 557 cm^3
+f_y := 355 MPa
+```
+
+```calc
+M_max := q*L^2/8 = ?
+V_max := q*L/2 = ?
+```

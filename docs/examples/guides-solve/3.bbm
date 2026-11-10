@@ -1,0 +1,19 @@
+```calc
+x := 1
+root(x^3 - 2*x - 5, x) = ?
+root(cos(x) - x, x, 0, 1) = ?
+```
+
+```calc
+polyroots([-6; 11; -6; 1]) = ?
+polyroots([1; 0; 1]) = ?
+```
+
+```calc
+a := 1 m
+b := 4 m
+given
+a + b == 5 m
+a*b == 6 m^2
+find(a, b) = ?
+```

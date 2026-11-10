@@ -1,0 +1,19 @@
+```calc
+grade(U) :=
+  "OK" if U <= 1
+  "fails" otherwise
+grade(0.8) = ?
+grade(1.2) = ?
+```
+
+```calc
+fib(n) :=
+  a <- 0
+  b <- 1
+  for k in 1..n
+    t <- a + b
+    a <- b
+    b <- t
+  a
+fib(10) = ?
+```

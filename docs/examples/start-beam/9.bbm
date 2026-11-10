@@ -1,0 +1,49 @@
+<!-- #t1 -->
+# Beam check
+
+```calc
+L := 6 m
+```
+
+```calc
+q := 12 kN/m
+E := 210 GPa
+I := 8360 cm^4
+W_el := 557 cm^3
+f_y := 355 MPa
+```
+
+```calc
+M_max := q*L^2/8 = ?
+V_max := q*L/2 = ?
+```
+
+```calc
+σ := M_max/W_el = ? MPa
+U := σ/f_y = ?
+```
+
+```calc
+δ := 5*q*L^4/(384*E*I) = ?
+δ_allow := L/360 = ?
+```
+
+```calc
+check := if(δ <= δ_allow, "OK", "too flexible") = ?
+```
+
+```calc
+M(x) := q*x*(L - x)/2
+M(1.5 m) = ?
+M(L/2) = ?
+```
+
+```plot
+title: Bending moment
+x: x = 0 m .. L
+x_unit: m
+traces:
+  - y: M(x)
+    unit: kN*m
+    label: M
+```

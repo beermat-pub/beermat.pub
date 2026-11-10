@@ -1,0 +1,5 @@
+```calc
+x/2 + x/3 -> ?
+diff(x*sin(x), x) -> ?
+int(x*sin(x), x) -> ?
+```

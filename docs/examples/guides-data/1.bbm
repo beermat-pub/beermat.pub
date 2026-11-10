@@ -1,0 +1,6 @@
+```calc
+D := READCSV("spring.csv")
+D = ?
+P := READPRN("spring.csv")
+P = ?
+```

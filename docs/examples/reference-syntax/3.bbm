@@ -1,0 +1,19 @@
+```calc
+f(x) := x^2 + 1
+g(x, y) := sqrt(x^2 + y^2)
+h := f
+```
+
+```calc
+f(x) :=
+  if x < 0
+    return -x
+  otherwise
+    x
+```
+
+```calc
+r := program*2 = ?
+  a <- 3
+  a + 1
+```

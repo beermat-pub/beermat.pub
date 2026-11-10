@@ -1,0 +1,46 @@
+```calc
+grade(U) :=
+  "OK" if U <= 1
+  "fails" otherwise
+grade(0.8) = ?
+grade(1.2) = ?
+```
+
+```calc
+fib(n) :=
+  a <- 0
+  b <- 1
+  for k in 1..n
+    t <- a + b
+    a <- b
+    b <- t
+  a
+fib(10) = ?
+```
+
+```calc
+peak(v) :=
+  k <- 0
+  for j in 0..last(v)
+    k <- j if v[j] > v[k]
+  k
+peak([3; 9; 4]) = ?
+```
+
+```calc
+halvings(x) :=
+  n <- 0
+  while x > 1
+    x <- x/2
+    n <- n + 1
+  n
+halvings(1000) = ?
+```
+
+```calc
+squares(n) :=
+  for k in 0..n - 1
+    v[k] <- k^2
+  v
+squares(4) = ?
+```

@@ -1,0 +1,7 @@
+```calc
+grade(U) :=
+  "OK" if U <= 1
+  "fails" otherwise
+grade(0.8) = ?
+grade(1.2) = ?
+```

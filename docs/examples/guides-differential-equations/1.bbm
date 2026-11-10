@@ -1,0 +1,12 @@
+```calc
+M := 2 kg
+k := 50 N/m
+c := 1 N*s/m
+given
+x''(t) == -(k*x(t) + c*x'(t))/M
+x(0 s) == 0.1 m
+x'(0 s) == 0 m/s
+x := Odesolve(t, 5 s)
+x(1 s) = ?
+x(5 s) = ?
+```

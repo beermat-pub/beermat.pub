@@ -1,0 +1,16 @@
+```calc
+L := 6 m
+```
+
+```table {name=Loads}
+| Case    | q [kN/m] | M [kN*m]  |
+|---------|---------:|----------:|
+| Dead    | 4.5      | = q*L^2/8 |
+| Imposed | 7.5      | = q*L^2/8 |
+| Total   | = sum(q) | = sum(M)  |
+```
+
+```calc
+M_Loads = ?
+M_d := 1.35*M_Loads[0] + 1.5*M_Loads[1] = ?
+```

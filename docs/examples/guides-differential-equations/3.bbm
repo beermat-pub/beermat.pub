@@ -1,0 +1,29 @@
+```calc
+M := 2 kg
+k := 50 N/m
+c := 1 N*s/m
+given
+x''(t) == -(k*x(t) + c*x'(t))/M
+x(0 s) == 0.1 m
+x'(0 s) == 0 m/s
+x := Odesolve(t, 5 s)
+x(1 s) = ?
+x(5 s) = ?
+```
+
+```calc
+given
+p'(t) == q(t)
+q'(t) == -p(t)
+p(0) == 0
+q(0) == 1
+[p; q] := Odesolve([p; q], t, 4)
+p(1) = ?
+q(1) = ?
+```
+
+```calc
+D(t, y) := [y[1]; -y[0]]
+Y := rkfixed([0; 1], 0, 2, 4, D)
+Y = ?
+```
