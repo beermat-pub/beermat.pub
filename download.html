@@ -78,13 +78,14 @@
 
   <h2>Windows</h2>
   <ul class="files">
-    <li><a data-file="Beermat-windows-setup.exe">Installer</a> <small>for Windows 10 and 11, with the <code>beermat</code> command</small></li>
+    <li><a href="ms-windows-store://pdp/?productid=9P3WZTXD6PJP">Microsoft Store</a> <small>installs and updates by itself (or <a href="https://apps.microsoft.com/detail/9P3WZTXD6PJP">open it in the browser</a>)</small></li>
+    <li><a data-file="Beermat-windows-setup.exe">Installer</a> <small>for Windows 10 and 11, with the <code>beermat</code> command (<a href="#before">*see “Before you install” below</a>)</small></li>
     <li><a data-file="Beermat-windows-portable.zip">Portable</a> <small>unzip anywhere and run Beermat.exe</small></li>
   </ul>
 
   <h2>macOS</h2>
   <ul class="files">
-    <li><a data-file="Beermat-macos.dmg">Disk image</a> <small>for Apple silicon</small></li>
+    <li><a data-file="Beermat-macos.dmg">Disk image</a> <small>for Apple silicon (<a href="#before">*see “Before you install” below</a>)</small></li>
   </ul>
 
   <h2>Linux</h2>
@@ -98,8 +99,13 @@
     <li><a href="https://marketplace.visualstudio.com/items?itemName=beermat-pub.beermat">Extension</a> <small><code>.bbm</code> files open on their page in VS Code: search for Beermat in VS Code's Extensions (also on <a href="https://open-vsx.org/extension/beermat-pub/beermat">Open VSX</a>), or install the <a data-file="beermat-*.vsix">.vsix file</a></small></li>
   </ul>
 
-  <h2>Before you install</h2>
-  <p>The installers aren't signed yet, so your system may warn about them: on Windows choose <b>More info</b>, then <b>Run anyway</b>; on macOS, right-click Beermat in Applications and choose <b>Open</b>. The <a href="/docs/start/install/">manual</a> has the details.</p>
+  <h2 id="before">Before you install</h2>
+  <p>The Windows installer and the macOS app aren't signed yet, so your system may warn about them the first time:</p>
+  <ul>
+    <li><b>Windows</b>: when it says Windows protected your PC, choose <b>More info</b>, then <b>Run anyway</b>. (The Microsoft Store version doesn't ask.)</li>
+    <li><b>macOS</b>: drag Beermat to Applications and open it once. When macOS says it can't check it, go to <b>System Settings → Privacy &amp; Security</b>, and under <b>Security</b> choose <b>Open Anyway</b> for Beermat; then open it again and confirm. You do this only once.</li>
+  </ul>
+  <p>The <a href="/docs/start/install/">manual</a> has the details.</p>
   <p>Every version, with its notes and the command line on its own, is on the <a href="https://github.com/beermat-pub/beermat/releases">releases page</a>.</p>
 </main>
 <footer>
